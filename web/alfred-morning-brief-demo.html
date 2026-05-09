@@ -200,6 +200,65 @@
     .panel-head p { margin-top: 4px; color: var(--muted); font-size: 13px; }
     .pill { flex: none; border: 1px solid #31577d; background: #0d1d2f; color: var(--cyan); border-radius: 999px; padding: 8px 11px; font-size: 12px; font-weight: 950; }
 
+    .architecture-map {
+      grid-column: 1 / -1;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(88, 182, 255, .16), transparent 26%),
+        radial-gradient(circle at 84% 16%, rgba(84, 226, 211, .13), transparent 24%),
+        linear-gradient(180deg, rgba(15, 31, 50, .96), rgba(7, 14, 24, .98));
+      animation: revealIn .42s ease both;
+    }
+    @keyframes revealIn {
+      from { opacity: 0; transform: translateY(-12px) scale(.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .map-body { padding: 18px; }
+    .map-flow {
+      display: grid;
+      grid-template-columns: 1fr 34px 1fr 34px 1.25fr 34px 1fr 34px 1fr;
+      align-items: stretch;
+      gap: 10px;
+    }
+    .map-node {
+      min-height: 126px;
+      border: 1px solid #2f5479;
+      border-radius: 8px;
+      background: rgba(6, 14, 25, .84);
+      padding: 14px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+    .map-node.core {
+      border-color: rgba(84, 226, 211, .62);
+      background: linear-gradient(180deg, rgba(20, 57, 79, .78), rgba(6, 14, 25, .92));
+    }
+    .map-node.gate {
+      border-color: rgba(255, 209, 95, .62);
+      background: linear-gradient(180deg, rgba(55, 41, 14, .72), rgba(6, 14, 25, .92));
+    }
+    .map-node strong { display: block; color: var(--text); font-size: 15px; margin-bottom: 7px; }
+    .map-node span { display: block; color: #aec4dc; font-size: 12px; line-height: 1.4; }
+    .map-arrow { display: grid; place-items: center; color: var(--cyan); font-size: 26px; font-weight: 950; }
+    .worker-mini-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin-top: 10px; }
+    .worker-dot {
+      height: 8px; border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 12px rgba(84,226,211,.28);
+    }
+    .map-benefits {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .map-benefit {
+      border: 1px solid rgba(84, 226, 211, .2);
+      border-radius: 8px;
+      background: rgba(84, 226, 211, .07);
+      padding: 11px;
+    }
+    .map-benefit strong { display: block; color: var(--cyan); font-size: 13px; margin-bottom: 4px; }
+    .map-benefit span { display: block; color: #bdd0e5; font-size: 12px; line-height: 1.32; }
+
     .worker-grid {
       padding: 16px;
       display: grid;
@@ -254,6 +313,9 @@
       .layout { grid-template-columns: 1fr; }
       .left { border-right: 0; border-bottom: 1px solid var(--line); }
       .content { grid-template-columns: 1fr; }
+      .map-flow { grid-template-columns: 1fr; }
+      .map-arrow { transform: rotate(90deg); min-height: 26px; }
+      .map-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .worker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 720px) {
@@ -263,6 +325,7 @@
       .timeline, .metrics, .gate-grid { grid-template-columns: 1fr; }
       .step { border-right: 0; border-bottom: 1px solid var(--line); }
       .scenario-grid, .worker-grid { grid-template-columns: 1fr; }
+      .map-benefits { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -309,6 +372,56 @@
         </nav>
 
         <div class="content">
+          <section class="panel architecture-map hidden" id="architectureMap">
+            <div class="panel-head">
+              <div>
+                <h2>Alfred System Architecture</h2>
+                <p>One request becomes coordinated work, then returns through a safety gate.</p>
+              </div>
+              <div class="pill">System Reveal</div>
+            </div>
+            <div class="map-body">
+              <div class="map-flow">
+                <div class="map-node">
+                  <strong>1. User Request</strong>
+                  <span>Natural language from app, Telegram, Safari, voice, or local UI.</span>
+                </div>
+                <div class="map-arrow">→</div>
+                <div class="map-node core">
+                  <strong>2. Afu Brain</strong>
+                  <span>Routes intent, loads memory, picks workers, defines risk boundaries.</span>
+                </div>
+                <div class="map-arrow">→</div>
+                <div class="map-node core">
+                  <strong>3. 20 Parallel Workers</strong>
+                  <span>Specialists split research, files, comparison, dissent, drafting, and verification.</span>
+                  <div class="worker-mini-grid" aria-hidden="true">
+                    <i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i>
+                    <i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i>
+                    <i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i>
+                    <i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i><i class="worker-dot"></i>
+                  </div>
+                </div>
+                <div class="map-arrow">→</div>
+                <div class="map-node">
+                  <strong>4. Local Memory</strong>
+                  <span>File maps, summaries, OCR, RAG, preferences, and prior context are already prepared.</span>
+                </div>
+                <div class="map-arrow">→</div>
+                <div class="map-node gate">
+                  <strong>5. Approval Gate</strong>
+                  <span>Send, publish, pay, trade, merge, or share actions wait for explicit approval.</span>
+                </div>
+              </div>
+              <div class="map-benefits">
+                <div class="map-benefit"><strong>Faster</strong><span>Work runs in parallel instead of one serial chat loop.</span></div>
+                <div class="map-benefit"><strong>Cheaper</strong><span>Prepared local memory reduces repeated token-heavy searching.</span></div>
+                <div class="map-benefit"><strong>Safer</strong><span>Risky actions are prepared but never silently submitted.</span></div>
+                <div class="map-benefit"><strong>More Useful</strong><span>The output is files, briefs, drafts, and decisions, not just text.</span></div>
+              </div>
+            </div>
+          </section>
+
           <section class="panel">
             <div class="panel-head">
               <div>
@@ -364,7 +477,7 @@
         metrics: ["37", "20", "1s", "4", "files, notes, mail, calendar"],
         narration: [
           "The user asks for the V121 meeting pack. Alfred does not answer from empty chat. It first turns the request into file search, quote comparison, risk review, questions, and a follow-up draft.",
-          "Twenty Afu workers now run in parallel. Some read local file maps, some extract meeting notes, some compare quote deltas, and some prepare objections so the final brief is not one flat answer.",
+          "Now the architecture appears. Afu Brain routes the request into twenty parallel workers, connects them to local memory, file maps, summaries, and OCR, then keeps risky actions behind an approval gate.",
           "The answer is ready in the same channel the user already uses. Alfred returns the files, risks, questions, and next email draft as prepared work, not loose brainstorming.",
           "The final gate matters. Alfred can draft the follow-up, but it will not send, share, or publish anything until the user approves."
         ],
@@ -397,7 +510,7 @@
         metrics: ["64", "20", "2s", "5", "reviews, prices, policies"],
         narration: [
           "This shopping request looks simple, but a bad agent can buy too early. Alfred first decomposes it into price, warranty, reviews, compatibility, return policy, and user preference lanes.",
-          "Afu workers compare options at the same time. One worker checks long-term review complaints, another checks cable compatibility, another watches return policy, and another protects payment.",
+          "Now the architecture appears. Afu Brain splits shopping into twenty parallel checks: reviews, price, warranty, compatibility, return policy, payment risk, and dissent before any cart action is allowed.",
           "Alfred gives a ranked shortlist and explains why the cheapest option is not automatically the best one. The user gets a cart-ready decision, not a blind recommendation.",
           "Checkout is gated. Alfred can prepare a cart and show the best option, but it cannot spend money or submit payment without approval."
         ],
@@ -430,7 +543,7 @@
         metrics: ["91", "20", "2s", "6", "filings, news, portfolio"],
         narration: [
           "Investing is where bounded autonomy matters. Alfred can research and prepare a thesis, but it must never turn a memo into a silent trade.",
-          "Twenty workers split filings, news, valuation, concentration risk, competitor pressure, sizing, and dissent. The point is not speed alone; it is independent checks in parallel.",
+          "Now the architecture appears. Afu Brain divides the investment question across twenty workers for filings, news, valuation, concentration, downside, sizing, and dissent, while the trade gate blocks execution.",
           "The result is a decision memo with a staged order plan, risk triggers, and reasons to wait. Alfred separates research from execution.",
           "The trade gate blocks brokerage login, order submission, alert creation, and portfolio edits until approval."
         ],
@@ -463,7 +576,7 @@
         metrics: ["30k", "20", "1s", "3", "indexed files"],
         narration: [
           "This is the Alfred and Afu Brain advantage. The system does not start from zero. It already has file maps, summaries, extracted text, and local search structures prepared in the background.",
-          "Afu workers split the document task: one searches filenames, one searches extracted OCR text, one verifies dates, one summarizes, and one prepares the message response.",
+          "Now the architecture appears. Afu Brain sends the document task through parallel file search, OCR search, date verification, summarization, privacy checking, and response preparation.",
           "The user gets the right file and a usable summary fast. This is not token-heavy browsing; it is prepared local cognition.",
           "Privacy remains gated. Alfred can retrieve and summarize, but external sharing or sending sensitive files requires approval."
         ],
@@ -496,7 +609,7 @@
         metrics: ["48", "20", "1s", "4", "messages, files, calendar"],
         narration: [
           "Daily operations are not one chat answer. Alfred gathers messages, promises, calendar changes, files, and reply drafts so the user can act without hunting across apps.",
-          "Twenty Afu workers prepare separate lanes: calendar, files, unanswered messages, promise tracking, priority, and risky actions.",
+          "Now the architecture appears. Afu Brain turns daily operations into twenty coordinated lanes: calendar, files, unanswered messages, promises, priority, drafts, and approval-gated actions.",
           "The result is a practical brief: what changed, what needs a reply, what files are needed, and what can wait.",
           "Alfred can draft replies and reminders, but sending messages and changing calendars stay gated."
         ],
@@ -801,6 +914,10 @@
       $("metricFilesLabel").textContent = filesLabel;
     }
 
+    function renderArchitecture(step) {
+      $("architectureMap").classList.toggle("hidden", step !== 1);
+    }
+
     function render(step, narrate = false) {
       state.step = step;
       const s = currentScenario();
@@ -821,6 +938,7 @@
       renderBrief(step);
       renderGate(step);
       renderMetrics(step);
+      renderArchitecture(step);
       setCaption(s.narration[step]);
       if (narrate) speak(s.narration[step]);
     }
