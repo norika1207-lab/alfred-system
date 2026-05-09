@@ -11,6 +11,198 @@ This repository is the clean open-source reference architecture for the Alfred
 system. It does not include private user data, production secrets, LINE tokens,
 Google OAuth tokens, private databases, or proprietary deployment files.
 
+## What Alfred Does
+
+Alfred turns one request into a coordinated team of specialist workers.
+
+Instead of asking one chatbot to improvise an answer, Alfred prepares the user's
+work world in the background:
+
+- indexes files
+- extracts text and images
+- builds summaries
+- links meetings, calendar, messages, and documents
+- remembers preferences and unresolved commitments
+- routes requests through Afu Brain
+- runs parallel specialist workers when a task is complex
+- prepares real actions while blocking risky final submission
+
+The user experience should feel simple:
+
+```text
+Ask once.
+Alfred already knows where to look.
+Twenty Afu workers prepare the answer in parallel.
+The result arrives as usable work, not raw chat.
+Risky actions wait for approval.
+```
+
+## Why It Matters
+
+Most personal AI tools are still foreground chat interfaces. They wait for a
+question, gather context slowly, spend tokens, and often return a polished but
+unverified answer.
+
+Alfred is designed around a different promise:
+
+```text
+The system works before the user asks.
+```
+
+That changes the economics and the feeling of the product.
+
+| User Pain | Alfred Approach | Result |
+|---|---|---|
+| "I know I have this file somewhere." | Prepared file map, OCR, summaries, and local search | Faster retrieval with less model cost |
+| "I need to prepare for a meeting." | Parallel workers gather files, risks, questions, and draft follow-up | Meeting pack instead of generic advice |
+| "I want to compare products or investments." | Evidence, dissent, pricing, risk, and action lanes run together | Better decision prep without blind execution |
+| "I want automation, but I do not trust it." | MASL / Brain Gate blocks send, pay, trade, publish, merge, delete | Useful autonomy without reckless autonomy |
+| "LLM calls are too expensive for everything." | Background computation, SQLite, deterministic rules, local models, cached summaries | Lower foreground token burn |
+
+## Product Benefits
+
+Alfred is built to improve four things at once:
+
+### Speed
+
+Prepared memory means Alfred can answer from indexed local context instead of
+starting a large search after the user asks. The target product feeling is:
+
+```text
+I ask for a file, and it appears immediately.
+```
+
+### Cost
+
+The expensive work is not always an LLM call. Alfred can use:
+
+- local SQLite indexes
+- extracted text
+- cached summaries
+- deterministic filters
+- local models
+- selective cloud model calls only when needed
+
+### Quality
+
+Parallel workers create independent lanes:
+
+- evidence
+- risk
+- dissent
+- memory
+- file search
+- action draft
+- synthesis
+
+This makes the result less likely to become one confident, unchecked answer.
+
+### Safety
+
+Alfred can prepare real work, but it should not silently cross dangerous final
+action boundaries. Sending, paying, trading, publishing, merging, deleting, and
+transferring require approval.
+
+## What The Demo Shows
+
+The browser demo is a product narrative for Alfred's core loop:
+
+1. A user asks for something concrete.
+2. Alfred turns it into a work plan.
+3. Afu workers prepare context in parallel.
+4. Alfred returns a usable brief.
+5. The approval gate blocks risky final actions.
+
+Live demo:
+
+```text
+https://charenix.com/alfred/demo
+```
+
+The demo includes scenarios for:
+
+- meeting preparation
+- shopping comparison
+- investment research
+- document retrieval
+- daily operations
+
+It uses a server-side TTS proxy in production, so no ElevenLabs key is exposed in
+the browser.
+
+## High-Level Architecture
+
+```text
+User request
+  ↓
+Alfred interface
+  voice / Safari / Telegram / email / app
+  ↓
+Afu Brain
+  intent, memory need, risk, route, approval boundary
+  ↓
+Afu Skill Runtime
+  file map, OCR, summaries, calendar, message context, local search
+  ↓
+Parallel Claw
+  background workers and foreground specialist lanes
+  ↓
+MASL / Brain Gate
+  allow, prepare, ask, block
+  ↓
+User receives prepared work
+  ↓
+Feedback updates memory and future routing
+```
+
+## Core Capabilities
+
+### Prepared File Memory
+
+Alfred can build a local memory layer from files before the user asks:
+
+- materialization
+- extraction
+- OCR
+- summarization
+- classification
+- linking
+- search
+
+### Parallel Worker Execution
+
+Parallel Claw represents the execution model:
+
+- many small workers run at once
+- each worker owns one lane of the problem
+- the system synthesizes the result into one answer
+- final actions go through an approval gate
+
+### Afu Brain Routing
+
+Afu Brain is the routing and decision layer. It decides:
+
+- what the user is asking for
+- which memory or tool should be used
+- whether the request is low-risk or high-risk
+- whether the answer can be returned directly
+- whether an action must be blocked or approval-gated
+
+### Approval-Gated Action Prep
+
+Alfred is useful because it can prepare real work:
+
+- draft an email
+- prepare a cart
+- prepare an order plan
+- prepare a meeting brief
+- prepare a file response
+- prepare calendar changes
+
+But the final action is gated.
+
+That is the difference between helpful automation and unsafe automation.
+
 ## The Core Idea
 
 Most AI agents wait until the user asks, then send large context to an expensive
