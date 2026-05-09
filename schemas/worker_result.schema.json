@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/worker_result.schema.json",
+  "title": "Background Worker Result",
+  "type": "object",
+  "required": ["worker", "status", "summary"],
+  "properties": {
+    "worker": { "type": "string" },
+    "status": { "type": "string" },
+    "summary": { "type": "string" },
+    "artifacts": { "type": "array", "items": { "type": "object" } },
+    "metrics": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

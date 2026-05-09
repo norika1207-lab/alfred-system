@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/alfred_event.schema.json",
+  "title": "Alfred Event",
+  "type": "object",
+  "required": ["event_version", "request_id", "owner_id", "channel", "input_type", "text", "timestamp"],
+  "properties": {
+    "event_version": { "const": 1 },
+    "request_id": { "type": "string" },
+    "owner_id": { "type": "string" },
+    "channel": { "type": "string" },
+    "input_type": { "type": "string" },
+    "text": { "type": "string" },
+    "attachments": { "type": "array", "items": { "type": "object" } },
+    "timestamp": { "type": "string" },
+    "context": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

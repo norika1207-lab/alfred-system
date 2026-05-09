@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alfred-system"
+version = "0.1.0"
+description = "Reference architecture for Alfred: background cognition, Afu Brain routing, Afu-style local work memory, and Parallel Claw workers."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Norika" }
+]
+keywords = ["ai-agent", "local-first", "rag", "multi-agent", "personal-ai", "file-search"]
+
+[project.scripts]
+alfred-system-demo = "alfred_system.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

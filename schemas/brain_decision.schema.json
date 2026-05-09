@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/brain_decision.schema.json",
+  "title": "Afu Brain Decision",
+  "type": "object",
+  "required": ["request_id", "owner_id", "intent", "mode", "risk", "route", "decision", "approval_required", "reason"],
+  "properties": {
+    "request_id": { "type": "string" },
+    "owner_id": { "type": "string" },
+    "intent": { "type": "string" },
+    "mode": { "type": "string" },
+    "risk": { "enum": ["low", "medium", "high", "irreversible"] },
+    "route": { "type": "string" },
+    "decision": { "enum": ["allow", "prepare", "ask", "block"] },
+    "approval_required": { "type": "boolean" },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+    "memory_refs": { "type": "array", "items": { "type": "string" } },
+    "blocked_final_action": { "type": "string" },
+    "reason": { "type": "string" },
+    "learning_update": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

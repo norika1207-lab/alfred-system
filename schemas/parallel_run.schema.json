@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/parallel_run.schema.json",
+  "title": "Parallel Claw Run Result",
+  "type": "object",
+  "required": ["request_id", "status", "synthesis", "lane_results"],
+  "properties": {
+    "request_id": { "type": "string" },
+    "status": { "enum": ["completed", "needs_approval", "blocked", "failed_with_trace"] },
+    "synthesis": { "type": "string" },
+    "lane_results": {
+      "type": "array",
+      "items": { "$ref": "worker_result.schema.json" }
+    },
+    "blocked_final_action": { "type": "string" },
+    "approval_prompt": { "type": "string" }
+  },
+  "additionalProperties": true
+}
+
