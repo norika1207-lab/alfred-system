@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-label="Alfred system architecture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111d"/>
+      <stop offset="0.52" stop-color="#0b1725"/>
+      <stop offset="1" stop-color="#06101b"/>
+    </linearGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12243a"/>
+      <stop offset="1" stop-color="#081421"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#173d56"/>
+      <stop offset="1" stop-color="#0a1826"/>
+    </linearGradient>
+    <linearGradient id="gate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a2a12"/>
+      <stop offset="1" stop-color="#0a1826"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .title { font: 900 54px Inter, Arial, sans-serif; fill: #e8f3ff; }
+      .sub { font: 600 22px Inter, Arial, sans-serif; fill: #8ea4bd; }
+      .kicker { font: 900 17px Inter, Arial, sans-serif; fill: #54e2d3; letter-spacing: 4px; }
+      .nodeTitle { font: 900 26px Inter, Arial, sans-serif; fill: #e8f3ff; }
+      .nodeText { font: 600 17px Inter, Arial, sans-serif; fill: #b7cbe2; }
+      .small { font: 800 15px Inter, Arial, sans-serif; fill: #9db3ca; }
+      .benefitTitle { font: 900 21px Inter, Arial, sans-serif; fill: #54e2d3; }
+      .benefitText { font: 600 15px Inter, Arial, sans-serif; fill: #bdd0e5; }
+    </style>
+  </defs>
+  <rect width="1400" height="760" rx="34" fill="url(#bg)"/>
+  <circle cx="230" cy="110" r="230" fill="#58b6ff" opacity="0.12"/>
+  <circle cx="1120" cy="90" r="210" fill="#54e2d3" opacity="0.10"/>
+
+  <text x="70" y="86" class="kicker">ALFRED + AFU BRAIN</text>
+  <text x="70" y="146" class="title">20 specialist agents, one coordinated result.</text>
+  <text x="70" y="186" class="sub">Parallel work, local memory, and approval gates for real tasks.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="250" width="210" height="170" rx="18" fill="url(#node)" stroke="#2f5479" stroke-width="2"/>
+    <text x="82" y="302" class="nodeTitle">1. Request</text>
+    <text x="82" y="342" class="nodeText">Natural language</text>
+    <text x="82" y="371" class="nodeText">from app, Safari,</text>
+    <text x="82" y="400" class="nodeText">Telegram, or voice.</text>
+
+    <text x="290" y="350" font-size="42" font-weight="900" fill="#54e2d3">→</text>
+
+    <rect x="335" y="250" width="220" height="170" rx="18" fill="url(#core)" stroke="#54e2d3" stroke-width="2"/>
+    <text x="363" y="302" class="nodeTitle">2. Afu Brain</text>
+    <text x="363" y="342" class="nodeText">Routes intent,</text>
+    <text x="363" y="371" class="nodeText">loads memory,</text>
+    <text x="363" y="400" class="nodeText">sets boundaries.</text>
+
+    <text x="580" y="350" font-size="42" font-weight="900" fill="#54e2d3">→</text>
+
+    <rect x="625" y="220" width="300" height="230" rx="18" fill="url(#core)" stroke="#54e2d3" stroke-width="2"/>
+    <text x="653" y="274" class="nodeTitle">3. 20 Workers</text>
+    <text x="653" y="314" class="nodeText">Research, compare,</text>
+    <text x="653" y="343" class="nodeText">verify, dissent, draft,</text>
+    <text x="653" y="372" class="nodeText">and synthesize.</text>
+    <g transform="translate(653 395)">
+      <rect width="24" height="10" rx="5" fill="#58b6ff"/><rect x="32" width="24" height="10" rx="5" fill="#54e2d3"/><rect x="64" width="24" height="10" rx="5" fill="#58b6ff"/><rect x="96" width="24" height="10" rx="5" fill="#54e2d3"/><rect x="128" width="24" height="10" rx="5" fill="#58b6ff"/>
+      <rect y="22" width="24" height="10" rx="5" fill="#54e2d3"/><rect x="32" y="22" width="24" height="10" rx="5" fill="#58b6ff"/><rect x="64" y="22" width="24" height="10" rx="5" fill="#54e2d3"/><rect x="96" y="22" width="24" height="10" rx="5" fill="#58b6ff"/><rect x="128" y="22" width="24" height="10" rx="5" fill="#54e2d3"/>
+      <rect x="160" width="24" height="10" rx="5" fill="#58b6ff"/><rect x="192" width="24" height="10" rx="5" fill="#54e2d3"/><rect x="224" width="24" height="10" rx="5" fill="#58b6ff"/>
+      <rect x="160" y="22" width="24" height="10" rx="5" fill="#54e2d3"/><rect x="192" y="22" width="24" height="10" rx="5" fill="#58b6ff"/><rect x="224" y="22" width="24" height="10" rx="5" fill="#54e2d3"/>
+    </g>
+
+    <text x="950" y="350" font-size="42" font-weight="900" fill="#54e2d3">→</text>
+
+    <rect x="995" y="250" width="220" height="170" rx="18" fill="url(#node)" stroke="#2f5479" stroke-width="2"/>
+    <text x="1023" y="302" class="nodeTitle">4. Memory</text>
+    <text x="1023" y="342" class="nodeText">File maps, OCR,</text>
+    <text x="1023" y="371" class="nodeText">summaries, RAG,</text>
+    <text x="1023" y="400" class="nodeText">preferences.</text>
+
+    <text x="1238" y="350" font-size="42" font-weight="900" fill="#54e2d3">→</text>
+
+    <rect x="1280" y="250" width="65" height="170" rx="18" fill="url(#gate)" stroke="#ffd15f" stroke-width="2"/>
+    <text x="1302" y="330" text-anchor="middle" font-size="38" font-weight="900" fill="#ffd15f">✓</text>
+    <text x="1312" y="377" text-anchor="middle" class="small">Gate</text>
+  </g>
+
+  <g transform="translate(70 535)">
+    <rect width="292" height="112" rx="16" fill="#0a1826" stroke="#21415f"/>
+    <text x="24" y="42" class="benefitTitle">Faster</text>
+    <text x="24" y="72" class="benefitText">Parallel workers replace</text>
+    <text x="24" y="95" class="benefitText">one serial chat loop.</text>
+  </g>
+  <g transform="translate(390 535)">
+    <rect width="292" height="112" rx="16" fill="#0a1826" stroke="#21415f"/>
+    <text x="24" y="42" class="benefitTitle">Cheaper</text>
+    <text x="24" y="72" class="benefitText">Local memory reduces</text>
+    <text x="24" y="95" class="benefitText">repeated token burn.</text>
+  </g>
+  <g transform="translate(710 535)">
+    <rect width="292" height="112" rx="16" fill="#0a1826" stroke="#21415f"/>
+    <text x="24" y="42" class="benefitTitle">Safer</text>
+    <text x="24" y="72" class="benefitText">Send, pay, trade, publish</text>
+    <text x="24" y="95" class="benefitText">wait for approval.</text>
+  </g>
+  <g transform="translate(1030 535)">
+    <rect width="292" height="112" rx="16" fill="#0a1826" stroke="#21415f"/>
+    <text x="24" y="42" class="benefitTitle">More useful</text>
+    <text x="24" y="72" class="benefitText">Returns briefs, files, drafts,</text>
+    <text x="24" y="95" class="benefitText">and prepared actions.</text>
+  </g>
+
+  <text x="70" y="708" class="small">Live demo: https://charenix.com/alfred/demo</text>
+  <text x="1322" y="708" text-anchor="end" class="small">github.com/norika1207-lab/alfred-system</text>
+</svg>

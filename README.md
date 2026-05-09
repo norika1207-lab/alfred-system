@@ -2,6 +2,24 @@
 
 **Background cognition instead of foreground token burn.**
 
+<p align="center">
+  <a href="https://charenix.com/alfred/demo"><strong>Live Demo</strong></a>
+  ·
+  <a href="web/alfred-morning-brief-demo.html"><strong>Demo Source</strong></a>
+  ·
+  <a href="assets/alfred-system-architecture.svg"><strong>Architecture Diagram</strong></a>
+  ·
+  <a href="docs/ARCHITECTURE.md"><strong>Architecture Docs</strong></a>
+  ·
+  <a href="docs/SYSTEM_HANDOFF.md"><strong>System Handoff</strong></a>
+</p>
+
+<p align="center">
+  <a href="https://charenix.com/alfred/demo">
+    <img src="assets/alfred-system-architecture.svg" alt="Alfred system architecture: user request to Afu Brain, 20 workers, local memory, and approval gate" width="100%">
+  </a>
+</p>
+
 Alfred is a personal AI Agent system that prepares your work memory in the
 background, then uses local models, file maps, and concurrent workers to find
 files, read images, summarize documents, prepare meetings, and finish complex
