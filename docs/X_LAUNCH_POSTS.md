@@ -4,10 +4,12 @@ Ready-to-post X copy for the Alfred System open-source launch.
 
 Every post should include an image. Use these ready-made images directly:
 
-- Human scenario launch image: `assets/alfred-human-workflow-launch.png`
-- System architecture image: `assets/alfred-system-architecture.svg`
+- Main human scenario image: `assets/alfred-human-workflow-launch.png`
+- Architecture image: `assets/alfred-system-architecture.svg`
+- Per-post X image cards: `assets/x-posts-png/*.png`
+- Editable SVG source cards: `assets/x-posts/*.svg`
 
-For X, start with the human scenario launch image. It shows a real person using Alfred, which is easier for normal viewers to understand than a pure architecture diagram.
+Each post below has its own assigned PNG image file. Use that PNG file when posting to X.
 
 Live demo:
 
@@ -26,7 +28,7 @@ https://github.com/norika1207-lab/alfred-system
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/01-main-launch.png
 ```
 
 Copy:
@@ -60,7 +62,7 @@ https://github.com/norika1207-lab/alfred-system
 Image:
 
 ```text
-assets/alfred-system-architecture.svg
+assets/x-posts-png/02-product-feeling.png
 ```
 
 Copy:
@@ -89,7 +91,7 @@ https://github.com/norika1207-lab/alfred-system
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/03-safety-gate.png
 ```
 
 Copy:
@@ -119,7 +121,7 @@ https://charenix.com/alfred/demo
 Image:
 
 ```text
-assets/alfred-system-architecture.svg
+assets/x-posts-png/04-parallel-agents.png
 ```
 
 Copy:
@@ -145,7 +147,7 @@ https://github.com/norika1207-lab/alfred-system
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/05-file-retrieval.png
 ```
 
 Copy:
@@ -173,7 +175,7 @@ https://charenix.com/alfred/demo
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/06-builder-angle.png
 ```
 
 Copy:
@@ -202,7 +204,7 @@ https://github.com/norika1207-lab/alfred-system
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/07-demo-cta.png
 ```
 
 Copy:
@@ -231,7 +233,7 @@ https://charenix.com/alfred/demo
 Image:
 
 ```text
-assets/alfred-system-architecture.svg
+assets/x-posts-png/08-technical-thread.png
 ```
 
 Copy:
@@ -259,7 +261,7 @@ https://github.com/norika1207-lab/alfred-system
 Image:
 
 ```text
-assets/alfred-system-architecture.svg
+assets/x-posts-png/thread-01.png
 ```
 
 Copy:
@@ -283,7 +285,7 @@ https://charenix.com/alfred/demo
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/thread-02.png
 ```
 
 Copy:
@@ -307,7 +309,7 @@ Alfred turns the request into a scoped work plan instead of asking one model to 
 Image:
 
 ```text
-assets/alfred-system-architecture.svg
+assets/x-posts-png/thread-03.png
 ```
 
 Copy:
@@ -334,7 +336,7 @@ This is where the 20-worker architecture matters.
 Image:
 
 ```text
-assets/alfred-system-architecture.svg
+assets/x-posts-png/thread-04.png
 ```
 
 Copy:
@@ -354,7 +356,7 @@ That means less foreground token burn and a faster product feeling.
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/thread-05.png
 ```
 
 Copy:
@@ -378,7 +380,7 @@ Useful autonomy should not mean reckless autonomy.
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/thread-06.png
 ```
 
 Copy:
@@ -409,7 +411,7 @@ https://charenix.com/alfred/demo
 Image:
 
 ```text
-assets/alfred-system-architecture.svg
+assets/x-posts-png/short-a.png
 ```
 
 Copy:
@@ -433,7 +435,7 @@ https://github.com/norika1207-lab/alfred-system
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/short-b.png
 ```
 
 Copy:
@@ -455,7 +457,7 @@ https://charenix.com/alfred/demo
 Image:
 
 ```text
-assets/alfred-human-workflow-launch.png
+assets/x-posts-png/short-c.png
 ```
 
 Copy:
@@ -471,4 +473,3 @@ https://github.com/norika1207-lab/alfred-system
 
 #AISafety #AIAgents #OpenSource
 ```
-
