@@ -1,6 +1,8 @@
 # Alfred System
 
-**Background cognition instead of foreground token burn.**
+**One request becomes twenty specialist workers. The work is already prepared by the time you ask.**
+
+> Background cognition instead of foreground token burn.
 
 <p align="center">
   <a href="https://charenix.com/alfred/demo"><strong>Live Demo</strong></a>
