@@ -488,3 +488,7 @@ Alfred turns your files, calendar, meetings, and messages into instant private
 work memory, then uses local models and concurrent agents to finish real tasks
 faster, cheaper, and safer.
 ```
+
+---
+
+Author: Norika Oda (織田紀香) · https://norika.tw
